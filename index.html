@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHAKTHI PRE SCHOOL - TRACT 04, RAJANGANAYA</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Quicksand:wght@400;500;600;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Reset and Base Styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    :root {
+      --primary: #FF8C42;
+      --primary-light: #FFA668;
+      --secondary: #2B9348;
+      --accent: #FFD166;
+      --dark: #2B3A55;
+      --light: #F8F9FA;
+      --gray: #6c757d;
+      --white: #ffffff;
+      --radius: 0.5rem;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    body {
+      font-family: 'Nunito', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.5;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .section {
+      padding: 4rem 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 4px;
+      background-color: var(--primary);
+      margin: 0.5rem auto;
+    }
+    
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      text-align: center;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Quicksand', sans-serif;
+    }
+    
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--primary-light);
+    }
+    
+    .btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+    
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--white);
+      box-shadow: var(--shadow);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      background-color: var(--primary);
+      color: var(--white);
+      border-radius: 50%;
+      font-family: 'Comic Neue', cursive;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-right: 0.75rem;
+    }
+    
+    .logo-text h1 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 0;
+    }
+    
+    .logo-text p {
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-bottom: 0;
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+    
+    nav a {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      color: var(--dark);
+      transition: color 0.3s ease;
+    }
+    
+    nav a:hover {
+      color: var(--primary);
+    }
+    
+    .contact-btn {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+    }
+    
+    .contact-btn:hover {
+      background-color: var(--primary-light);
+      color: var(--white);
+    }
+    
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--dark);
+    }
+    
+    .mobile-menu {
+      display: none;
+      padding: 1rem;
+    }
+    
+    .mobile-menu ul {
+      list-style: none;
+    }
+    
+    .mobile-menu li {
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .mobile-menu a {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      display: block;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background-color: var(--accent);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-content {
+      padding: 6rem 1rem;
+      max-width: 600px;
+      text-align: center;
+      margin: 0 auto;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: var(--dark);
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      color: var(--dark);
+    }
+    
+    /* Notice Board */
+    .notice-board {
+      background-color: var(--white);
+    }
+    
+    .notice-card {
+      background-color: var(--light);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: var(--shadow);
+    }
+    
+    .notice-date {
+      font-size: 0.875rem;
+      color: var(--gray);
+      margin-bottom: 0.5rem;
+    }
+    
+    .notice-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--dark);
+    }
+    
+    /* About Section */
+    .about {
+      background-color: var(--light);
+    }
+    
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    
+    /* Staff Section */
+    .staff {
+      background-color: var(--white);
+    }
+    
+    .staff-container {
+      margin-bottom: 3rem;
+    }
+    
+    .staff-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .staff-card {
+      background-color: var(--light);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+    }
+    
+    .staff-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .staff-image {
+      height: 200px;
+      background-color: #ddd;
+      position: relative;
+    }
+    
+    .staff-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .staff-details {
+      padding: 1.5rem;
+    }
+    
+    .staff-name {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .staff-role {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    
+    /* Gallery Section */
+    .gallery {
+      background-color: var(--light);
+    }
+    
+    .gallery-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .gallery-filter {
+      background: none;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .gallery-filter.active, .gallery-filter:hover {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+    
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      height: 250px;
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+    
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      color: var(--white);
+      padding: 1rem;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    
+    .gallery-item:hover .gallery-caption {
+      transform: translateY(0);
+    }
+    
+    /* Homework Section */
+    .homework {
+      background-color: var(--white);
+    }
+    
+    .homework-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .homework-card {
+      background-color: var(--light);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    
+    .homework-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--dark);
+    }
+    
+    .homework-subject {
+      display: inline-block;
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+    
+    /* Events Section */
+    .events {
+      background-color: var(--light);
+    }
+    
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .event-card {
+      background-color: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    
+    .event-date {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 0.5rem;
+      text-align: center;
+      font-weight: 700;
+    }
+    
+    .event-details {
+      padding: 1.5rem;
+    }
+    
+    .event-title {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .event-location {
+      display: flex;
+      align-items: center;
+      color: var(--gray);
+      margin-bottom: 0.5rem;
+    }
+    
+    .event-location svg {
+      margin-right: 0.5rem;
+    }
+    
+    /* Testimonials Section */
+    .testimonials {
+      background-color: var(--white);
+    }
+    
+    .testimonials-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .testimonial-card {
+      background-color: var(--light);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+    
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      font-size: 4rem;
+      color: rgba(0, 0, 0, 0.1);
+      font-family: serif;
+    }
+    
+    .testimonial-content {
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+    
+    .testimonial-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 1rem;
+      background-color: #ddd;
+    }
+    
+    .testimonial-name {
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+    
+    .testimonial-role {
+      font-size: 0.875rem;
+      color: var(--gray);
+    }
+    
+    /* Contact Section */
+    .contact {
+      background-color: var(--light);
+    }
+    
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-icon {
+      min-width: 40px;
+      height: 40px;
+      background-color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      margin-right: 1rem;
+    }
+    
+    .contact-text h4 {
+      margin-bottom: 0.25rem;
+    }
+    
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    
+    input, textarea, select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: var(--radius);
+      font-family: 'Nunito', sans-serif;
+    }
+    
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: var(--white);
+      padding: 3rem 0 1.5rem;
+    }
+    
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+    }
+    
+    .footer-section h3 {
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-links a {
+      color: #ddd;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: var(--white);
+      transition: all 0.3s ease;
+    }
+    
+    .social-link:hover {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.875rem;
+      color: #ddd;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-wrap: wrap;
+      }
+      
+      nav {
+        display: none;
+      }
+      
+      .mobile-toggle {
+        display: block;
+      }
+      
+      .mobile-menu.active {
+        display: block;
+      }
+      
+      .about-content, .contact-container, .footer-container {
+        flex-direction: column;
+      }
+      
+      .logo-text h1 {
+        font-size: 1.25rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="#" class="logo">
+        <div class="logo-icon">SP</div>
+        <div class="logo-text">
+          <h1>SHAKTHI PRE SCHOOL</h1>
+          <p>Nurturing minds for over 20 years</p>
+        </div>
+      </a>
+      
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#staff">Our Staff</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#homework">Homework</a></li>
+          <li><a href="#notices">Notices</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact" class="contact-btn">Contact Us</a></li>
+        </ul>
+      </nav>
+      
+      <button class="mobile-toggle" id="mobileToggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#staff">Our Staff</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#homework">Homework</a></li>
+        <li><a href="#notices">Notices</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact" class="contact-btn">Contact Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Welcome to Shakthi Pre School</h1>
+        <p>Nurturing young minds and building a strong foundation for the future since 2003.</p>
+        <a href="#contact" class="btn btn-primary">Enroll Your Child Today</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notice Board Section -->
+  <section class="section notice-board" id="notices">
+    <div class="container">
+      <h2 class="section-title">School Notices</h2>
+      
+      <div class="notice-card">
+        <div class="notice-date">April 15, 2025</div>
+        <h3 class="notice-title">Annual School Day Celebration</h3>
+        <p>We are excited to announce our Annual School Day celebration scheduled for April 30th. Parents are cordially invited to attend this special event.</p>
+      </div>
+      
+      <div class="notice-card">
+        <div class="notice-date">April 10, 2025</div>
+        <h3 class="notice-title">Parent-Teacher Meeting</h3>
+        <p>The quarterly Parent-Teacher Meeting will be held on April 20th from 9:00 AM to 12:00 PM. Please make arrangements to attend this important meeting.</p>
+      </div>
+      
+      <div class="notice-card">
+        <div class="notice-date">April 5, 2025</div>
+        <h3 class="notice-title">Registration for Next Academic Year</h3>
+        <p>Registration for the upcoming academic year (2025-2026) is now open. Limited seats are available. Contact the school office for more details.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about" id="about">
+    <div class="container">
+      <h2 class="section-title">About Our School</h2>
+      
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Our History</h3>
+          <p>Established in 2003, Shakthi Pre School has been serving the community of TRACT 04, RAJANGANAYA for over 20 years. With a rich history of academic excellence, we have educated over 1500 students who have gone on to succeed in various fields.</p>
+          
+          <h3>Our Mission</h3>
+          <p>Our mission is to provide a safe, nurturing, and stimulating environment where children can develop their full potential. We aim to instill a love for learning that will last a lifetime.</p>
+          
+          <h3>Our Approach</h3>
+          <p>At Shakthi Pre School, we follow a child-centered approach to education. Our curriculum is designed to promote holistic development through play-based learning, creative activities, and age-appropriate academic instruction.</p>
+          
+          <a href="#contact" class="btn btn-outline">Contact Us to Learn More</a>
+        </div>
+        
+        <div class="about-image">
+          <!-- Placeholder for school image -->
+          <div style="background-color: #ddd; height: 400px; display: flex; align-items: center; justify-content: center; color: #666;">
+            School Building Image
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Staff Section -->
+  <section class="section staff" id="staff">
+    <div class="container">
+      <h2 class="section-title">Our Staff</h2>
+      
+      <h3>Current Staff</h3>
+      <div class="staff-grid">
+        <div class="staff-card">
+          <div class="staff-image">
+            <!-- Placeholder for staff image -->
+            <div style="background-color: #ddd; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">
+              Staff Photo
+            </div>
+          </div>
+          <div class="staff-details">
+            <h4 class="staff-name">Miss Malithi</h4>
+            <div class="staff-role">Head Mistress</div>
+            <p>Leading our school with dedication and vision since 2015. Miss Malithi has over 15 years of experience in early childhood education.</p>
+          </div>
+        </div>
+        
+        <div class="staff-card">
+          <div class="staff-image">
+            <!-- Placeholder for staff image -->
+            <div style="background-color: #ddd; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">
+              Staff Photo
+            </div>
+          </div>
+          <div class="staff-details">
+            <h4 class="staff-name">Miss BPT Ashani</h4>
+            <div class="staff-role">Sub Teacher</div>
+            <p>Specializes in early literacy and numeracy development. She creates engaging learning experiences for our youngest students.</p>
+          </div>
+        </div>
+        
+        <div class="staff-card">
+          <div class="staff-image">
+            <!-- Placeholder for staff image -->
+            <div style="background-color: #ddd; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">
+              Staff Photo
+            </div>
+          </div>
+          <div class="staff-details">
+            <h4 class="staff-name">Mr. Sampath</h4>
+            <div class="staff-role">Administrative Officer</div>
+            <p>Handles all administrative matters with efficiency and care. Mr. Sampath ensures the smooth operation of our school's daily functions.</p>
+          </div>
+        </div>
+      </div>
+      
+      <h3 style="margin-top: 3rem;">Past Staff</h3>
+      <div class="staff-grid">
+        <div class="staff-card">
+          <div class="staff-image">
+            <!-- Placeholder for staff image -->
+            <div style="background-color: #ddd; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">
+              Staff Photo
+            </div>
+          </div>
+          <div class="staff-details">
+            <h4 class="staff-name">Mrs. Jayanthi Perera</h4>
+            <div class="staff-role">Head Mistress (2003-2015)</div>
+            <p>Founding head of Shakthi Pre School who established our core educational philosophy and values.</p>
+          </div>
+        </div>
+        
+        <div class="staff-card">
+          <div class="staff-image">
+            <!-- Placeholder for staff image -->
+            <div style="background-color: #ddd; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">
+              Staff Photo
+            </div>
+          </div>
+          <div class="staff-details">
+            <h4 class="staff-name">Ms. Kumari Silva</h4>
+            <div class="staff-role">Teacher (2005-2018)</div>
+            <p>Dedicated educator who taught generations of Shakthi students and developed our arts curriculum.</p>
+          </div>
+        </div>
+        
+        <div class="staff-card">
+          <div class="staff-image">
+            <!-- Placeholder for staff image -->
+            <div style="background-color: #ddd; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">
+              Staff Photo
+            </div>
+          </div>
+          <div class="staff-details">
+            <h4 class="staff-name">Mr. Anura Bandara</h4>
+            <div class="staff-role">Music Teacher (2010-2020)</div>
+            <p>Introduced music education to our curriculum and organized numerous cultural performances.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <h2 class="section-title">School Gallery</h2>
+      
+      <div class="gallery-filters">
+        <button class="gallery-filter active" data-filter="all">All</button>
+        <button class="gallery-filter" data-filter="classroom">Classroom</button>
+        <button class="gallery-filter" data-filter="events">Events</button>
+        <button class="gallery-filter" data-filter="activities">Activities</button>
+        <button class="gallery-filter" data-filter="facilities">Facilities</button>
+      </div>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item" data-category="classroom">
+          <!-- Placeholder for gallery image -->
+          <div style="background-color: #ddd; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">
+            Classroom Image
+          </div>
+          <div class="gallery-caption">Children engaged in classroom learning</div>
+        </div>
+        
+        <div class="gallery-item" data-category="events">
+          <!-- Placeholder for gallery image -->
+          <div style="background-color: #ddd; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">
+            Events Image
+          </div>
+          <div class="gallery-caption">Annual concert performance</div>
+        </div>
+        
+        <div class="gallery-item" data-category="activities">
+          <!-- Placeholder for gallery image -->
+          <div style="background-color: #ddd; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">
+            Activities Image
+          </div>
+          <div class="gallery-caption">Art and craft activities</div>
+        </div>
+        
+        <div class="gallery-item" data-category="facilities">
+          <!-- Placeholder for gallery image -->
+          <div style="background-color: #ddd; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">
+            Facilities Image
+          </div>
+          <div class="gallery-caption">Our playground equipment</div>
+        </div>
+        
+        <div class="gallery-item" data-category="events">
+          <!-- Placeholder for gallery image -->
+          <div style="background-color: #ddd; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">
+            Events Image
+          </div>
+          <div class="gallery-caption">Sports day celebrations</div>
+        </div>
+        
+        <div class="gallery-item" data-category="classroom">
+          <!-- Placeholder for gallery image -->
+          <div style="background-color: #ddd; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">
+            Classroom Image
+          </div>
+          <div class="gallery-caption">Reading corner activities</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Homework Section -->
+  <section class="section homework" id="homework">
+    <div class="container">
+      <h2 class="section-title">Homework Resources</h2>
+      
+      <div class="homework-grid">
+        <div class="homework-card">
+          <div class="homework-subject">Language</div>
+          <h3 class="homework-title">Letter Recognition Activity</h3>
+          <p>Practice identifying and writing letters A-Z. Complete the worksheet by matching letters to pictures.</p>
+          <a href="#" class="btn btn-outline">Download Worksheet</a>
+        </div>
+        
+        <div class="homework-card">
+          <div class="homework-subject">Mathematics</div>
+          <h3 class="homework-title">Counting and Number Recognition</h3>
+          <p>Practice counting objects and recognizing numbers 1-20. Complete the counting exercises in the workbook.</p>
+          <a href="#" class="btn btn-outline">Download Worksheet</a>
+        </div>
+        
+        <div class="homework-card">
+          <div class="homework-subject">Art</div>
+          <h3 class="homework-title">Coloring and Motor Skills Activity</h3>
+          <p>Improve fine motor skills by coloring within the lines and practicing scissor cutting along the dotted lines.</p>
+          <a href="#" class="btn btn-outline">Download Template</a>
+        </div>
+        
+        <div class="homework-card">
+          <div class="homework-subject">General Knowledge</div>
+          <h3 class="homework-title">Animals and Their Habitats</h3>
+          <p>Learn about different animals and where they live. Match animals to their habitats on the worksheet.</p>
+          <a href="#" class="btn btn-outline">Download Worksheet</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="section events" id="events">
+    <div class="container">
+      <h2 class="section-title">Upcoming Events</h2>
+      
+      <div class="events-grid">
+        <div class="event-card">
+          <div class="event-date">April 30, 2025</div>
+          <div class="event-details">
+            <h3 class="event-title">Annual School Day Celebration</h3>
+            <div class="event-location">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              School Auditorium
+            </div>
+            <p>Join us for performances by our talented students and celebrate their achievements throughout the year.</p>
+          </div>
+        </div>
+        
+        <div class="event-card">
+          <div class="event-date">May 15, 2025</div>
+          <div class="event-details">
+            <h3 class="event-title">Sports Day</h3>
+            <div class="event-location">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              School Playground
+            </div>
+            <p>A day filled with various sports activities and competitions for students. Parents are welcome to attend and cheer.</p>
+          </div>
+        </div>
+        
+        <div class="event-card">
+          <div class="event-date">June 5, 2025</div>
+          <div class="event-details">
+            <h3 class="event-title">Environmental Awareness Day</h3>
+            <div class="event-location">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              School Campus
+            </div>
+            <p>Special activities to raise awareness about environmental conservation. Tree planting and recycling workshops.</p>
+          </div>
+        </div>
+        
+        <div class="event-card">
+          <div class="event-date">July 10, 2025</div>
+          <div class="event-details">
+            <h3 class="event-title">Parent Workshop</h3>
+            <div class="event-location">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              School Library
+            </div>
+            <p>Workshop for parents on supporting early childhood development at home. Practical strategies and resources will be shared.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <h2 class="section-title">What Parents Say</h2>
+      
+      <div class="testimonials-container">
+        <div class="testimonial-card">
+          <p class="testimonial-content">My son has flourished at Shakthi Pre School. The teachers are dedicated and caring, creating a nurturing environment where children truly thrive. The diverse activities have helped develop his confidence and social skills.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">
+              <!-- Placeholder for avatar -->
+            </div>
+            <div>
+              <div class="testimonial-name">Mrs. Kumari Perera</div>
+              <div class="testimonial-role">Parent of Ashan, Age 5</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-content">Choosing Shakthi Pre School for my daughter was the best decision. The well-rounded curriculum and focus on values have given her a strong foundation. She loves going to school every day!</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">
+              <!-- Placeholder for avatar -->
+            </div>
+            <div>
+              <div class="testimonial-name">Mr. Nimal Fernando</div>
+              <div class="testimonial-role">Parent of Amaya, Age 4</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-content">As a former student of Shakthi Pre School, I can attest to the lasting impact it has had on my life. The early education I received here prepared me well for primary school and beyond.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">
+              <!-- Placeholder for avatar -->
+            </div>
+            <div>
+              <div class="testimonial-name">Dr. Sampath Jayawardena</div>
+              <div class="testimonial-role">Alumni, Batch of 2005</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div class="contact-text">
+              <h4>Phone</h4>
+              <p>Hotline: 0723455996</p>
+              <p>Office: 0114578921</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="contact-text">
+              <h4>Email</h4>
+              <p>info@shakthipreschool.lk</p>
+              <p>admissions@shakthipreschool.lk</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="contact-text">
+              <h4>Address</h4>
+              <p>Shakthi Pre School</p>
+              <p>TRACT 04, RAJANGANAYA</p>
+              <p>North Western Province, Sri Lanka</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="contact-text">
+              <h4>Office Hours</h4>
+              <p>Monday to Friday: 8:00 AM - 4:00 PM</p>
+              <p>Saturday: 9:00 AM - 12:00 PM</p>
+              <p>Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form">
+          <h3>Send us a Message</h3>
+          
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="general">General Inquiry</option>
+                <option value="admission">Admission Information</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-section">
+          <div class="footer-logo">
+            <div class="logo-icon">SP</div>
+            <div>
+              <h3>SHAKTHI PRE SCHOOL</h3>
+            </div>
+          </div>
+          <p>Nurturing young minds and building a strong foundation for the future since 2003.</p>
+          <div class="social-links">
+            <a href="#" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+            <a href="#" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="#" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#staff">Our Staff</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul class="footer-links">
+            <li><a href="#homework">Homework Assignments</a></li>
+            <li><a href="#notices">School Notices</a></li>
+            <li><a href="#">Parent Portal</a></li>
+            <li><a href="#">School Calendar</a></li>
+            <li><a href="#">Learning Resources</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 Shakthi Pre School. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileToggle = document.getElementById('mobileToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      
+      mobileToggle.addEventListener('click', function() {
+        mobileMenu.classList.toggle('active');
+      });
+      
+      // Close mobile menu when clicking on links
+      const mobileLinks = mobileMenu.querySelectorAll('a');
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.remove('active');
+        });
+      });
+      
+      // Gallery Filters
+      const galleryFilters = document.querySelectorAll('.gallery-filter');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      
+      galleryFilters.forEach(filter => {
+        filter.addEventListener('click', function() {
+          // Remove active class from all filters
+          galleryFilters.forEach(btn => btn.classList.remove('active'));
+          
+          // Add active class to clicked filter
+          this.classList.add('active');
+          
+          // Get filter value
+          const filterValue = this.getAttribute('data-filter');
+          
+          // Filter gallery items
+          galleryItems.forEach(item => {
+            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          });
+        });
+      });
+      
+      // Contact Form Submission
+      const contactForm = document.getElementById('contactForm');
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          // Get form data
+          const formData = new FormData(contactForm);
+          const formObj = {};
+          formData.forEach((value, key) => {
+            formObj[key] = value;
+          });
+          
+          // In a real application, you would send this data to your server
+          console.log('Form Submission:', formObj);
+          
+          // Show success message
+          alert('Thank you for your message! We will get back to you soon.');
+          
+          // Reset form
+          contactForm.reset();
+        });
+      }
+      
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href').substring(1);
+          if (!targetId) return;
+          
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80, // Adjust for header height
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
